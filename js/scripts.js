@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     // animations
 
-    window.onscroll = function() {
+    /*window.onscroll = function() {
         if (window.innerWidth > 767) {
             const wh = window.innerHeight;
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
                 $('.additionals').removeClass('additionals--shown');
             }
         }
-    }
+    }*/
 
     var answers = document.getElementsByClassName('faq__answer');
     [...answers].forEach(function(ans) {
