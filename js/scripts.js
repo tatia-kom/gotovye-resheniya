@@ -187,8 +187,8 @@ $(document).ready(function() {
         });
     }
 
-    $(window).resize(function() {
-        $('.gallery__slider').each(function() {
+    window.onresize = function() {
+        /*$('.gallery__slider').each(function() {
             $(this).slick('unslick');
             var slider = $(this);
             setTimeout(function() {
@@ -208,7 +208,7 @@ $(document).ready(function() {
                     ]
                 });
             }, 500);
-        });
+        });*/
 
         if (window.innerWidth < 768) {
             $('.prices__slider').slick({
@@ -223,7 +223,7 @@ $(document).ready(function() {
         else {
             $('.prices__slider').slick('unslick');
         }
-    });
+    }
 
 });
 
