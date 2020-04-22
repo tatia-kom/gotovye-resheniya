@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     // animations
 
-    /*window.onscroll = function() {
+    window.onscroll = function() {
         if (window.innerWidth > 767) {
             const wh = window.innerHeight;
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
                 $('.additionals').removeClass('additionals--shown');
             }
         }
-    }*/
+    }
 
     var answers = document.getElementsByClassName('faq__answer');
     [...answers].forEach(function(ans) {
@@ -113,7 +113,7 @@ $(document).ready(function() {
         $('html, body').animate({ scrollTop: 0 }, 600);
     }
 
-    document.getElementsByClassName('what-in__more')[0].onclick = function() {
+    /*document.getElementsByClassName('what-in__more')[0].onclick = function() {
         if (!document.getElementsByClassName('what-in__block')[0].classList.contains('what-in__block--opened')) {
             document.getElementsByClassName('what-in__block')[0].classList.add('what-in__block--opened');
             scrollMoreOpen = window.pageYOffset;
@@ -121,21 +121,21 @@ $(document).ready(function() {
         else {
             document.getElementsByClassName('what-in__block')[0].classList.remove('what-in__block--opened');
         }
-    }
+    }*/
     document.getElementsByClassName('what-in__less')[0].onclick = function() {
         var block = document.getElementsByClassName('what-in__block')[0];
         block.classList.remove('what-in__block--opened');
         $('html, body').animate({ scrollTop: scrollMoreOpen }, 200);
     }
 
-    var calcStatus = document.getElementsByClassName('calculator__status');
+    /*var calcStatus = document.getElementsByClassName('calculator__status');
     [...calcStatus].forEach(function(stat) {
         stat.onclick = function (e) {
             e.preventDefault();
             document.getElementsByClassName('calculator__status--active')[0].classList.remove('calculator__status--active');
             stat.classList.add('calculator__status--active');
         }
-    });
+    });*/
 
     // sliders
 
