@@ -1,0 +1,158 @@
+@import "layout/var";
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+    margin: 0;
+    padding: 0;
+    background: white;
+    position: relative;
+
+    &.modal-opened {
+        overflow: hidden;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-weight: normal;
+}
+header, footer, section, div, span, p, button, a, input, textarea, form {
+    box-sizing: border-box;
+}
+
+button,input,textarea,select{
+    outline: none;
+}
+button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    transition: 0.3s;
+}
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:focus {
+    outline: none;
+}
+
+form {
+    margin: 0;
+}
+
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+.container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: $md) {
+        width: 940px;
+    }
+
+    @media (max-width: $sm) {
+        width: 720px;
+    }
+
+    @media (max-width: $xs) {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+.button {
+    background: $yellow;
+    font-size: 14px;
+    font-weight: bold;
+    width: 195px;
+    height: 41px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid $yellow;
+
+    &:hover {
+        background: transparent;
+    }
+
+    &--white {
+        background: transparent;
+
+        &:hover {
+            background: $yellow;
+        }
+    }
+}
+
+.big-img {
+    img {
+        width: 100%;
+    }
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+
+    @media (max-width: $xs) {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+.side-button {
+    position: fixed;
+    right: -100px;
+    top: 250px;
+    border-radius: 24px 24px 0 0;
+    border-width: 7px 7px 0;
+    border-color: $yellow;
+    border-style: solid;
+    font-weight: bold;
+    cursor: pointer;
+    width: 243px;
+    height: 50px;
+    font-size: 14px;
+    background: white;
+    transition: 0.3s;
+    transform: rotate(-90deg);
+    z-index: 100;
+    text-align: center;
+    color: black;
+    line-height: 40px;
+
+    @media (max-width: $xs) {
+        border-width: 3px 3px 0;
+        width: 150px;
+        height: 30px;
+        line-height: 28px;
+        right: -60px;
+        font-size: 11px;
+    }
+
+    &:hover {
+        background: $yellow;
+    }
+
+}

@@ -1,0 +1,176 @@
+@import "layout/var";
+
+.what-in {
+  background: #F7F7F7;
+  padding: 30px 0;
+  overflow: hidden;
+
+  &__subtitle {
+    margin-top: 31px;
+
+    @media (max-width: $xs) {
+      margin-top: 15px;
+    }
+
+    a {
+      color: black;
+      border-bottom: 2px solid $yellow;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+
+    @media (max-width: $xs) {
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    width: 10%;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 0.5s;
+
+    @media (max-width: $sm) {
+      width: 14%;
+    }
+
+    @media (max-width: $xs) {
+      opacity: 1;
+      transform: translateX(0);
+      width: 50%;
+      text-align: center;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &--shown {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &__img {
+    height: 78px;
+    display: flex;
+    align-items: flex-end;
+
+    @media (max-width: $xs) {
+      justify-content: center;
+    }
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+    margin-top: 7px;
+
+    @media (max-width: $xs) {
+      margin-top: 15px;
+    }
+  }
+
+  &__more {
+    margin-top: 40px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+
+    @media (max-width: $xs) {
+      margin: 15px auto 0;
+      display: block;
+      width: 92px;
+    }
+
+    &:after {
+      content: ' ↓ ';
+      color: $yellow;
+    }
+
+    &:hover {
+      border-color: $yellow;
+    }
+  }
+
+  &__block {
+    padding-top: 20px;
+    transition: 0.3s;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    &--opened {
+      height: auto;
+      pointer-events: auto;
+    }
+  }
+
+  &__block-title {
+    font-weight: bold;
+    line-height: 19px;
+    width: 58%;
+
+    @media (max-width: $xs) {
+      width: 100%;
+    }
+  }
+
+  &__table {
+    border-top: 5px solid $yellow;
+    margin-top: 7px;
+  }
+
+  &__row {
+    display: flex;
+    padding: 30px 20px;
+
+    &:nth-child(even) {
+      background: white;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    width: 240px;
+    flex-shrink: 0;
+
+    @media (max-width: $xs) {
+      width: 120px;
+    }
+  }
+
+  &__less {
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+
+    &:after {
+      content: ' ↑ ';
+      color: $yellow;
+    }
+
+    &:hover {
+      border-color: $yellow;
+    }
+  }
+}

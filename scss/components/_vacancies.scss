@@ -1,0 +1,46 @@
+@import "layout/var";
+
+.vacancies {
+  background: #F7F7F7;
+  padding: 30px 0;
+
+  &__subtitle {
+    margin-top: 30px;
+
+    @media (max-width: $xs) {
+      margin-top: 15px;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+      margin-top: 0;
+    }
+  }
+
+  &__item {
+    font-size: 16px;
+    padding: 0 0 0 38px;
+    position: relative;
+
+    @media (max-width: $xs) {
+      margin-top: 15px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 16px;
+      height: 13px;
+      background: url('../img/arrow.svg');
+    }
+  }
+}

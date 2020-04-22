@@ -1,0 +1,48 @@
+@import "layout/var";
+
+.form {
+  padding: 30px 0 60px;
+
+  @media (max-width: $xs) {
+    padding-bottom: 30px;
+  }
+
+  &__flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__part {
+    width: 35%;
+
+    @media (max-width: $xs) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__input {
+    border: 3px solid $yellow;
+    height: 41px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 10px;
+    box-shadow: none!important;
+  }
+
+  .button {
+    @media (max-width: $xs) {
+      width: 100%;
+    }
+  }
+}

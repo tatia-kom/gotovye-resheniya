@@ -1,0 +1,73 @@
+@import "layout/var";
+
+.reasons {
+  padding: 50px 0 30px;
+  overflow: hidden;
+
+  @media (max-width: $xs) {
+    padding: 30px 0;
+  }
+
+  .title {
+    @media (max-width: $xs) {
+      text-align: center;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    width: calc(20% - 15px);
+    flex-shrink: 0;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 0.5s;
+
+    @media (max-width: $xs) {
+      opacity: 1;
+      transform: translateX(0);
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    &--shown {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &__img {
+    height: 76px;
+
+    @media (max-width: $xs) {
+      text-align: center;
+    }
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  &__text {
+    margin-top: 15px;
+
+    @media (max-width: $xs) {
+      text-align: center;
+    }
+  }
+
+  .button {
+    @media (max-width: $xs) {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

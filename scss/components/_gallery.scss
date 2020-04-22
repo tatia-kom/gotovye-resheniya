@@ -1,0 +1,158 @@
+@import "layout/var";
+
+.gallery {
+  background: #F7F7F7;
+  border: 5px solid rgba(242, 204, 82, 0.3);
+  padding: 30px 0;
+  overflow: hidden;
+
+  &__flex {
+    display: flex;
+    margin-left: -15px;
+    width: calc(100% + 30px);
+    flex-wrap: wrap;
+
+    @media (max-width: $xs) {
+      width: 100%;
+      margin-left: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__slider {
+    width: 313px;
+    flex-shrink: 0;
+    margin: 30px 15px 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: 0.5s;
+
+    @media (max-width: $md) {
+      width: 293px;
+    }
+
+    @media (max-width: $sm) {
+      width: 220px;
+    }
+
+    @media (max-width: $xs) {
+      opacity: 1;
+      transform: translateY(0);
+      width: 100%;
+      margin: 30px 0 0;
+    }
+
+    &:hover {
+      .slick-prev {
+        left: 0!important;
+      }
+      .slick-next {
+        right: 0!important;
+      }
+    }
+
+    &--shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__slide {
+    outline: none;
+  }
+
+  &__item {
+
+  }
+
+  &__photo {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 180px;
+
+    @media (max-width: $sm) {
+      height: 120px;
+    }
+
+    @media (max-width: $xs) {
+      height: 150px;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    text-align: justify;
+    margin-top: 15px;
+
+    @media (max-width: $sm) {
+      margin-top: 25px;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 80px;
+    width: 30px!important;
+    height: 30px!important;
+    cursor: pointer;
+    display: block;
+    color: transparent;
+    font-size: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 11px 20px;
+    background-color: rgba(0,0,0,0.5);
+
+    &.slick-prev {
+      background-image: url('../img/prev.svg');
+      left: -30px;
+      z-index: 100;
+    }
+
+    &.slick-next {
+      background-image: url('../img/next.svg');
+      right: -30px;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: 120px;
+
+    @media (max-width: $xs) {
+      top: 150px;
+    }
+
+    li {
+      cursor: pointer;
+      margin: 0 3px;
+
+      button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: white;
+        border: 1px solid $yellow;
+        color: transparent;
+        font-size: 0;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      &:hover, &.slick-active {
+        button {
+          background: $yellow;
+        }
+      }
+    }
+  }
+}
