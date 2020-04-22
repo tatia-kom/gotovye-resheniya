@@ -187,9 +187,9 @@ $(document).ready(function() {
         });
     }
 
-    window.onresize = function() {
+    $(window).resize(function() {
         $('.gallery__slider').each(function() {
-            //$(this).slick('unslick');
+            $(this).slick('unslick');
             var slider = $(this);
             setTimeout(function() {
                 slider.slick({
@@ -221,9 +221,9 @@ $(document).ready(function() {
             });
         }
         else {
-            //$('.prices__slider').slick('unslick');
+            $('.prices__slider').slick('unslick');
         }
-    }
+    });
 
 });
 
