@@ -93,6 +93,7 @@ $(document).ready(function() {
             e.preventDefault();
             var block = document.getElementById(but.getAttribute('data-href'));
             var destination = block.offsetTop;
+            if (window.innerWidth < 768) destination -= 45;
             $('html, body').animate({ scrollTop: destination }, 600);
         }
     });
@@ -104,6 +105,7 @@ $(document).ready(function() {
             var id = link.getAttribute('href').slice(1);
             var block = document.getElementById(id);
             var destination = block.offsetTop;
+            if (window.innerWidth < 768) destination -= 45;
             $('html, body').animate({ scrollTop: destination }, 600);
             document.getElementsByClassName('header')[0].classList.remove('header--opened_menu');
         }
@@ -152,6 +154,14 @@ $(document).ready(function() {
                     settings: {
                         dots: true
                     }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true
+                    }
                 }
             ]
         });
@@ -188,29 +198,7 @@ $(document).ready(function() {
     }
 
     window.onresize = function() {
-        /*$('.gallery__slider').each(function() {
-            $(this).slick('unslick');
-            var slider = $(this);
-            setTimeout(function() {
-                slider.slick({
-                    arrows: true,
-                    autoplay: false,
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    responsive: [
-                        {
-                            breakpoint: 992,
-                            settings: {
-                                dots: true
-                            }
-                        }
-                    ]
-                });
-            }, 500);
-        });*/
-
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 768 && !$('.prices__slider').hasClass('slick-slider')) {
             $('.prices__slider').slick({
                 arrows: false,
                 dots: true,
@@ -220,7 +208,7 @@ $(document).ready(function() {
                 slidesToScroll: 1
             });
         }
-        else {
+        if (window.innerWidth > 767 && $('.prices__slider').hasClass('slick-slider')) {
             $('.prices__slider').slick('unslick');
         }
     }
